@@ -20,6 +20,17 @@ mavenCentralPublish {
     }
 }
 
+publishing {
+    publications {
+        create("maven_public", MavenPublication::class) {
+            groupId = rootProject.group
+            artifactId = "fix-protocol-version"
+            version = rootProject.version
+            from(components.getByName("java"))
+        }
+    }
+}
+
 repositories {
     mavenCentral()
     maven("https://repo.mirai.mamoe.net/snapshots")
