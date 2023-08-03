@@ -23,9 +23,9 @@ mavenCentralPublish {
 publishing {
     publications {
         create("maven_public", MavenPublication::class) {
-            groupId = rootProject.group
+            groupId = rootProject.group as String
             artifactId = "fix-protocol-version"
-            version = rootProject.version
+            version = rootProject.version as String
             from(components.getByName("java"))
         }
     }
